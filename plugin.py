@@ -5,11 +5,18 @@ import json
 import sys
 from threading import Thread, Lock
 
+# global flag indicating threads should terminate
 terminate = False
+
+# Critical section to serialize access to standard out and
+# avoid interleaved output
 lock = Lock()
 
 
 def output_measurements(item):
+    """
+    Thread function for outputing measurements
+    """
     global terminate
     sw = SineWave(item['source'], item['amplitude'], item['frequency'])
     poll = item['sample']/1000.0
@@ -24,12 +31,17 @@ def output_measurements(item):
 
 
 class SineWavePlugin(object):
+
     def __init__(self):
         self._sine_wave = None
         self._config = None
         self._waves = []
 
     def _init(self):
+        """
+        Initialize the plugin by reading param.json and spawning
+        a thread for each of the configuration items
+        """
         with open('param.json') as f:
             self._config = json.load(f)
             for item in self._config['items']:
@@ -37,6 +49,9 @@ class SineWavePlugin(object):
                 t.start()
 
     def run(self):
+        """
+        Method to start the plugin
+        """
         global terminate
         self._init()
         while True:
