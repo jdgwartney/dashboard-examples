@@ -1,0 +1,65 @@
+{
+  "name" : "TrueSight Pulse Sine Wave Plugin",
+  "version" : "1.0.0",
+  "meterVersionRequired" : "4.2.0-611",
+  "unsupportedPlatforms" : [ ],
+  "tags" : "sinewave",
+  "description": "Plugin that generates multiple sine waves",
+  "icon": "sine_wave.png",
+  "command": "venv/bin/python plugin.py",
+  "metrics": [
+    "SINE_WAVE_AMPLITUDE"
+  ],
+  "postExtract": "",
+  "dashboards" : [
+  ],
+  "paramSchema": [
+    {
+      "title": "Name",
+      "name": "name",
+      "description": "Name of the sinewave",
+      "type": "string",
+      "default": "SineWave",
+      "required": true 
+    },
+    {
+      "title": "Amplitude",
+      "name": "port",
+      "description": "Unitless value of the max value of the sinewave",
+      "type": "string",
+      "default": "1.0",
+      "required": true 
+    },
+    {
+      "title": "Frequency",
+      "name": "frequency",
+      "description": "Frequency in hertz of the sinewave",
+      "type": "string",
+      "default": "1",
+      "required": true
+    },
+    {
+      "title": "Noise",
+      "name": "noise",
+      "description": "Enable noise generation added on the sine wave",
+      "type": "boolean",
+      "default": false
+    },
+    {
+      "title": "Sample Rate",
+      "name": "sample",
+      "description": "How often (in milliseconds) to collect values from the sinewave.",
+      "type": "integer",
+      "default": 5000,
+      "required": true
+    },
+    {
+      "title": "Debug Level",
+      "name": "debug_level",
+      "description": "If you are having issues with the plugin, you can enable additional debugging output to be shown in the meter console",
+      "type": { "enum" : [["CRITICAL", "critical"], ["ERROR", "error"], ["WARNING", "warning"], ["INFO", "info"], ["DEBUG", "debug"], ["NOTSET", "notset"]] },
+      "default": "notset",
+      "required" : true
+    }
+  ]
+}
