@@ -6,7 +6,7 @@
   "tags" : "sinewave",
   "description": "Plugin that generates multiple sine waves",
   "icon": "icon.png",
-  "command": "venv/bin/python plugin.py",
+  "command": "python plugin.py",
   "metrics": [
     "SINE_WAVE_AMPLITUDE"
   ],
