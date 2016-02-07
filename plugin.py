@@ -18,14 +18,15 @@ def output_measurements(item):
     Thread function for outputing measurements
     """
     global terminate
-    sw = SineWave(item['name'], float(item['amplitude']), float(item['frequency']))
+    sw = SineWave(float(item['amplitude']), float(item['frequency']))
+    source = item['name']
     poll = item['sample'] / 1000.0
     while True:
         if terminate:
             break
         now = int(time.time())
         with lock:
-            print("{0} {1} {2} {3}".format("SINE_WAVE_AMPLITUDE", sw.name, sw.data[1], now))
+            print("{0} {1} {2} {3}".format("SINE_WAVE_AMPLITUDE", sw.data[1], source, now))
             sys.stdout.flush()
         time.sleep(poll)
 

@@ -9,7 +9,7 @@ class SineWaveTest(TestCase):
         self.assertTrue(True)
 
     def test_data_generation(self):
-        sw = SineWave('test', 1, 1)
+        sw = SineWave(1, 1)
         data = []
 
         for i in range(0, 10):
@@ -21,7 +21,3 @@ class SineWaveTest(TestCase):
         self.assertAlmostEqual(0.9344489574432373, data[9][0], delta=0.01)
         self.assertAlmostEqual(-0.40032304800732454, data[9][1], delta=0.01)
 
-    def test_get_name(self):
-        name = "foo"
-        sw = SineWave(name, 1, 1)
-        self.assertEqual(name, sw.name)
