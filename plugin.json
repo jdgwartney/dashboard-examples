@@ -34,7 +34,7 @@
     },
     {
       "title": "Amplitude",
-      "name": "port",
+      "name": "amplitude",
       "description": "Unitless value of the max value of the sinewave",
       "type": "string",
       "default": "1.0",
