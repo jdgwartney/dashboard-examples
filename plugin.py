@@ -18,7 +18,7 @@ def output_measurements(item):
     Thread function for outputing measurements
     """
     global terminate
-    sw = SineWave(item['source'], item['amplitude'], item['frequency'])
+    sw = SineWave(item['name'], item['amplitude'], item['frequency'])
     poll = item['sample'] / 1000.0
     while True:
         if terminate:
@@ -58,7 +58,6 @@ class SineWavePlugin(object):
                 time.sleep(0.1)
             except KeyboardInterrupt:
                 terminate = True
-                print("Terminating")
 
 
 if __name__ == "__main__":

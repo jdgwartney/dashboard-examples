@@ -1,31 +1,31 @@
 {
   "items": [
     {
-      "source": "foo",
+      "name": "foo",
       "amplitude": 1,
       "frequency": 0.01,
       "sample": 1000
     },
     {
-      "source": "bar",
+      "name": "bar",
       "amplitude": 1,
       "frequency": 0.01,
       "sample": 1000
     },
     {
-      "source": "red",
+      "name": "red",
       "amplitude": 1,
       "frequency": 0.01,
       "sample": 1000
     },
     {
-      "source": "green",
+      "name": "green",
       "amplitude": 1,
       "frequency": 0.01,
       "sample": 1000
     },
     {
-      "source": "blue",
+      "name": "blue",
       "amplitude": 1,
       "frequency": 0.01,
       "sample": 1000
