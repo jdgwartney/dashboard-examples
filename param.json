@@ -4,7 +4,31 @@
       "source": "foo",
       "amplitude": 1,
       "frequency": 0.01,
-      "sample": 5000
+      "sample": 1000
+    },
+    {
+      "source": "bar",
+      "amplitude": 1,
+      "frequency": 0.01,
+      "sample": 1000
+    },
+    {
+      "source": "red",
+      "amplitude": 1,
+      "frequency": 0.01,
+      "sample": 1000
+    },
+    {
+      "source": "green",
+      "amplitude": 1,
+      "frequency": 0.01,
+      "sample": 1000
+    },
+    {
+      "source": "blue",
+      "amplitude": 1,
+      "frequency": 0.01,
+      "sample": 1000
     }
   ],
   "pollInterval": 5000

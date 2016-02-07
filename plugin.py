@@ -3,10 +3,27 @@ from sine_wave import SineWave
 import time
 import json
 import sys
+from threading import Thread, Lock
+
+terminate = False
+lock = Lock()
+
+
+def output_measurements(item):
+    global terminate
+    sw = SineWave(item['source'], item['amplitude'], item['frequency'])
+    poll = item['sample']/1000.0
+    while True:
+        if terminate:
+            break
+        now = int(time.time())
+        with lock:
+            print("{0} {1} {2} {3}".format("SINE_WAVE_AMPLITUDE", sw.name, sw.data[1], now))
+            sys.stdout.flush()
+        time.sleep(poll)
 
 
 class SineWavePlugin(object):
-
     def __init__(self):
         self._sine_wave = None
         self._config = None
@@ -16,19 +33,21 @@ class SineWavePlugin(object):
         with open('param.json') as f:
             self._config = json.load(f)
             for item in self._config['items']:
-                self._waves.append(SineWave(item['source'], item['amplitude'], item['frequency']))
-
-    def _output_measurements(self):
-        now = int(time.time())
-        for wave in self._waves:
-            print("{0} {1} {2} {3}".format("SINE_WAVE_AMPLITUDE", wave.name, wave.data[1], now))
-            sys.stdout.flush()
-            time.sleep(1)
+                t = Thread(target=output_measurements, args=(item, ))
+                t.start()
 
     def run(self):
+        global terminate
         self._init()
         while True:
-            self._output_measurements()
+            try:
+                if terminate:
+                    break
+                time.sleep(0.1)
+            except KeyboardInterrupt:
+                terminate = True
+                print("Terminating")
+
 
 if __name__ == "__main__":
     w = SineWavePlugin()
