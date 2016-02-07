@@ -5,7 +5,7 @@
   "unsupportedPlatforms" : [ ],
   "tags" : "sinewave",
   "description": "Plugin that generates multiple sine waves",
-  "icon": "sine_wave.png",
+  "icon": "icon.png",
   "command": "venv/bin/python plugin.py",
   "metrics": [
     "SINE_WAVE_AMPLITUDE"
