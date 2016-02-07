@@ -13,6 +13,7 @@
   "postExtract": "",
   "dashboards" : [
   ],
+  "paramArray" : { "itemTitle" : ["name"], "schemaTitle" : "Sinewave"},
   "paramSchema": [
     {
       "title": "Name",

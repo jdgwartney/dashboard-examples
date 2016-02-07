@@ -19,7 +19,7 @@ def output_measurements(item):
     """
     global terminate
     sw = SineWave(item['source'], item['amplitude'], item['frequency'])
-    poll = item['sample']/1000.0
+    poll = item['sample'] / 1000.0
     while True:
         if terminate:
             break
@@ -31,11 +31,8 @@ def output_measurements(item):
 
 
 class SineWavePlugin(object):
-
     def __init__(self):
-        self._sine_wave = None
-        self._config = None
-        self._waves = []
+        pass
 
     def _init(self):
         """
@@ -43,9 +40,9 @@ class SineWavePlugin(object):
         a thread for each of the configuration items
         """
         with open('param.json') as f:
-            self._config = json.load(f)
-            for item in self._config['items']:
-                t = Thread(target=output_measurements, args=(item, ))
+            parameters = json.load(f)
+            for item in parameters['items']:
+                t = Thread(target=output_measurements, args=(item,))
                 t.start()
 
     def run(self):
