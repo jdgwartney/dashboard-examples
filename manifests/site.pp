@@ -7,17 +7,27 @@ file { 'bash_profile':
   path    => '/home/vagrant/.bash_profile',
   ensure  => file,
   source  => '/vagrant/manifests/bash_profile',
-  require => Exec['update-packages'],
 }
 
 class { 'boundary':
   token => $api_token,
-  require => Exec['update-packages'],
 }
+
+# TODO: Update meter.conf and restart service
+#file { 'update-meter-conf':
+#  notify  => Service['boundary-meter'],
+#  path    => '/etc/boundary/meter.conf',
+#  mode    => '0644',
+#  owner   => 'root',
+#  group   => 'root',
+#  ensure  => file,
+#  source  => '/vagrant/manifests/meter.conf',
+#}
 
 file { "/var/www/html/dashboards":
   source  => "/vagrant/dashboards",
   recurse => true,
+  require => Package['apache2'],
 }
 
 exec { 'update-packages':
