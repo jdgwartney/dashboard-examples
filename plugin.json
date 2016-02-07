@@ -1,9 +1,9 @@
 {
-  "name" : "TrueSight Pulse Sine Wave Plugin",
-  "version" : "1.0.0",
-  "meterVersionRequired" : "4.2.0-611",
-  "unsupportedPlatforms" : [ ],
-  "tags" : "sinewave",
+  "name": "TrueSight Pulse Sine Wave Plugin",
+  "version": "1.0.0",
+  "meterVersionRequired": "4.2.0-611",
+  "unsupportedPlatforms": [],
+  "tags": "sinewave",
   "description": "Plugin that generates multiple sine waves",
   "icon": "icon.png",
   "command": "python plugin.py",
@@ -11,9 +11,18 @@
     "SINE_WAVE_AMPLITUDE"
   ],
   "postExtract": "",
-  "dashboards" : [
+  "dashboards": [
+    {
+      "name": "Simple",
+      "layout": "d-w=1&d-h=1&d-pad=5&d-light=1&d-bg=none&d-g-SINE_WAVE_AMPLITUE=0-0-1-1"
+    }
   ],
-  "paramArray" : { "itemTitle" : ["name"], "schemaTitle" : "Sinewave"},
+  "paramArray": {
+    "itemTitle": [
+      "name"
+    ],
+    "schemaTitle": "Sinewave"
+  },
   "paramSchema": [
     {
       "title": "Name",
@@ -21,7 +30,7 @@
       "description": "Name of the sinewave",
       "type": "string",
       "default": "SineWave",
-      "required": true 
+      "required": true
     },
     {
       "title": "Amplitude",
@@ -29,7 +38,7 @@
       "description": "Unitless value of the max value of the sinewave",
       "type": "string",
       "default": "1.0",
-      "required": true 
+      "required": true
     },
     {
       "title": "Frequency",
@@ -58,9 +67,36 @@
       "title": "Debug Level",
       "name": "debug_level",
       "description": "If you are having issues with the plugin, you can enable additional debugging output to be shown in the meter console",
-      "type": { "enum" : [["CRITICAL", "critical"], ["ERROR", "error"], ["WARNING", "warning"], ["INFO", "info"], ["DEBUG", "debug"], ["NOTSET", "notset"]] },
+      "type": {
+        "enum": [
+          [
+            "CRITICAL",
+            "critical"
+          ],
+          [
+            "ERROR",
+            "error"
+          ],
+          [
+            "WARNING",
+            "warning"
+          ],
+          [
+            "INFO",
+            "info"
+          ],
+          [
+            "DEBUG",
+            "debug"
+          ],
+          [
+            "NOTSET",
+            "notset"
+          ]
+        ]
+      },
       "default": "notset",
-      "required" : true
+      "required": true
     }
   ]
 }
