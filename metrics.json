@@ -1,5 +1,5 @@
 {
-    "SINE_WAVE_AMPLITUE": {
+    "SINE_WAVE_AMPLITUDE": {
        "defaultAggregate": "max",
        "defaultResolutionMS": 1000,
        "description": "Amplitude of the measured Sinewave",
