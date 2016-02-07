@@ -24,9 +24,8 @@ def output_measurements(item):
     while True:
         if terminate:
             break
-        now = int(time.time())
         with lock:
-            print("{0} {1} {2} {3}".format("SINE_WAVE_AMPLITUDE", sw.data[1], source, now))
+            print("{0} {1} {2}".format("SINE_WAVE_AMPLITUDE", sw.data[1], source))
             sys.stdout.flush()
         time.sleep(poll)
 
