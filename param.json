@@ -2,32 +2,32 @@
   "items": [
     {
       "name": "foo",
-      "amplitude": 1,
-      "frequency": 0.01,
+      "amplitude": "1.0",
+      "frequency": "0.01",
       "sample": 1000
     },
     {
       "name": "bar",
-      "amplitude": 1,
-      "frequency": 0.01,
+      "amplitude": "1.0",
+      "frequency": "0.01",
       "sample": 1000
     },
     {
       "name": "red",
-      "amplitude": 1,
-      "frequency": 0.01,
+      "amplitude": "1.0",
+      "frequency": "0.01",
       "sample": 1000
     },
     {
       "name": "green",
-      "amplitude": 1,
-      "frequency": 0.01,
+      "amplitude": "1.0",
+      "frequency": "0.01",
       "sample": 1000
     },
     {
       "name": "blue",
-      "amplitude": 1,
-      "frequency": 0.01,
+      "amplitude": "1.0",
+      "frequency": "0.01",
       "sample": 1000
     }
   ],

@@ -44,8 +44,8 @@
       "title": "Frequency",
       "name": "frequency",
       "description": "Frequency in hertz of the sinewave",
-      "type": "double",
-      "default": 1.0,
+      "type": "string",
+      "default": "1.0",
       "required": true
     },
     {

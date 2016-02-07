@@ -18,7 +18,7 @@ def output_measurements(item):
     Thread function for outputing measurements
     """
     global terminate
-    sw = SineWave(item['name'], item['amplitude'], item['frequency'])
+    sw = SineWave(item['name'], float(item['amplitude']), float(item['frequency']))
     poll = item['sample'] / 1000.0
     while True:
         if terminate:
